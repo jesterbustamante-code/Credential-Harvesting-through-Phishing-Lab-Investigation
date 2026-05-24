@@ -27,10 +27,10 @@ using Splunk SIEM and Wireshark packet analysis.
 | Tactic | Technique |
 |---|---|
 | Reconnaissance | T1598 – Phishing for Information |
-| Resource Development | T1583.001 – Acquire Domains | T1585.002 - Email Accounts | T1587 - Stage Capabilities |
+| Resource Development | T1583.001 – Acquire Domains , T1585.002 - Email Accounts , T1587 - Stage Capabilities |
 | Initial Access | T1566 – Phishing |
 | Execution | T1204.001 - User Execution: Malicious Link |
-| Defense Evasion | T1036.007 – Lookalike Domains | T1531 / T1071.001 -  Traffic Signaling / Covert Redirection |
+| Defense Evasion | T1036.007 – Lookalike Domains , T1531 / T1071.001 -  Traffic Signaling / Covert Redirection |
 | Credential Access | T1557 – Adversary-in-the-Middle |
 | Discovery | T1082 - System Information Discovery |
 | Command & Control | T1071.001 – Web Protocols |
