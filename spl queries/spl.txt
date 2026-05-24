@@ -1,1 +1,23 @@
+@@ Investigating Process Creation [Event ID 1] @@
+
+index=* sourcetype=”WinEventLog:Microsoft-Windows-Sysmon/Operational EventCode=1 Image=”*thunderbird.exe”
+|table _time, host, Image, CommandLine, ParentImage, User
+
+index=* sourcetype="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 ParentImage="*\thunderbird.exe" (Image="*\chrome.exe" OR Image="*\firefox.exe" OR Image="*\msedge.exe" OR Image="*\iexplore.exe")
+|table _time, host, ParentImage, Image, CommandLine, User
+
+@@ Investigating DNS Query [Event ID 22] @@
+
+index=* sourcetype="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=22 
+| table _time, host, Image, QueryName, QueryResults
+| sort _time
+
+index=* sourcetype="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=22 QueryResults="*192.168.1.11*"
+| table _time, host, Image, QueryName, QueryResults
+| sort _time
+
+@@ Investigating Network Connection [Event ID 3] @@
+
+index=sysmon sourcetype="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=3 SourceIp="172.16.1.10" DestinationIp="192.168.1.11" (Image=”*chrome.exe” OR Image=”*thunderbird.exe” OR Image="*msedge.exe”)
+| table _time, host, Image, SourceIp, SourcePort, DestinationIp DestinationPort, User
 
